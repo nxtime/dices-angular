@@ -1,0 +1,6 @@
+<button draggable="false"
+  [class]="'dice ' + actionClass + (showValue ? ' _item' : '')"
+  [disabled]="isDisabled" (click)="onClick(dice)">
+  <img draggable="false" class="h-16" src="https://www.google.com/logos/fnbx/polyhedral_dice/{{ dice }}_blank.png" />
+  <span class="absolute">{{ showValue ? value : dice }}</span>
+</button>

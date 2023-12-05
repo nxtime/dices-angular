@@ -1,0 +1,56 @@
+.dice {
+  --delay: 0;
+  animation: rotateIn 0.2s calc(var(--delay) * 0.05s) ease-in-out;
+  @apply select-none relative h-20 w-20 max-md:h-16 max-md:w-16 bg-slate-600 border-slate-500 flex justify-center items-center rounded-md capitalize border transition-all disabled:opacity-50;
+
+  &:not(:disabled) {
+    &:hover {
+      animation: shake 0.6s ease-in-out;
+      @apply border-zinc-200 bg-slate-700/25;
+    }
+
+    &:active {
+      @apply scale-90;
+    }
+  }
+
+  &._success {
+    @apply shadow-md shadow-green-400 bg-green-700;
+  }
+
+  &._failure {
+    @apply shadow-md shadow-red-400 bg-red-700;
+  }
+}
+
+@keyframes rotateIn {
+  from {
+    transform: rotateZ(90deg);
+  }
+  to {
+    transform: rotateZ(0deg);
+  }
+}
+
+@keyframes shake {
+  10%,
+  90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  20%,
+  80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%,
+  50%,
+  70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%,
+  60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}

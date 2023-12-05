@@ -5,6 +5,7 @@
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
     "strict": true,
+    "baseUrl": "./src",
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": true,
@@ -15,6 +16,12 @@
     "experimentalDecorators": true,
     "moduleResolution": "node",
     "importHelpers": true,
+    "paths": {
+      "@components/*": ["app/components/*"],
+      "@interfaces/*": ["interfaces/*"],
+      "@constants/*": ["constants/*"],
+      "@stores/*": ["stores/*"]
+    },
     "target": "ES2022",
     "module": "ES2022",
     "useDefineForClassFields": false,
